@@ -17,6 +17,7 @@ if (!defined('ABSPATH')) exit;
 define('TOURMASTER_URL', plugins_url('', __FILE__));
 define('TOURMASTER_LOCAL', dirname(__FILE__));
 
+define('TOURMASTER_ASSETS_URL', TOURMASTER_URL . '/assets');
 define('TOURMASTER_AJAX_URL', admin_url('admin-ajax.php'));
 define('TOURMASTER_INCLUDE_LOCAL', TOURMASTER_LOCAL . '/includes');
 define('TOURMASTER_EXT_LOCAL', TOURMASTER_LOCAL . '/extensions');
@@ -41,8 +42,11 @@ require_once( TOURMASTER_INCLUDE_LOCAL . '/init.php' );
 
 // Require Extensions Plugins.
 require_once ( TOURMASTER_EXT_LOCAL . '/menu-icons/menu-icons.php' );
+
+add_action( 'wp_enqueue_scripts', 'tourmaster_enqueue_script' );
 if( !function_exists('tourmaster_enqueue_script') ){
 	function tourmaster_enqueue_script(){
+		wp_enqueue_style('tourmaster-style', TOURMASTER_ASSETS_URL . '/css/front.css');
 		/*tourmaster_enqueue_icon();
 
 		wp_enqueue_script('jquery-ui-core');
@@ -89,3 +93,6 @@ if( !function_exists('tourmaster_body_class') ){
 		return $classes;
 	}
 }
+
+// Set Large Image Sizes
+add_image_size( 'tour-archive-medium', 216, 185, true );

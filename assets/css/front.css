@@ -1,0 +1,229 @@
+@charset "utf-8";
+/* =======================================
+ - Archive Template 
+========================================== */
+/* 1. List layout */
+a {
+    color: #337ab7;
+    text-decoration: none;
+}
+.fl-page-content {
+    background-color: #f0f3f6 !important;
+}
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.btn:hover,
+.btn:focus,
+.btn.focus {
+  color: #333333;
+  text-decoration: none;
+}
+.btn:active,
+.btn.active {
+  outline: 0;
+  background-image: none;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+#list-tour-layout {}
+#list-tour-layout .fl-post {
+    margin: 0; padding: 0; border: none;
+}
+#list-tour-layout .fl-archive-title {
+    background: white;
+    border-radius: 3px;
+    box-shadow: 0 2px #eee;
+    margin: 0 0px 20px;
+    color: #02a0d4;
+    text-align: center;
+    font-size: 24px;
+    padding-top: 8px;
+}
+#list-tour-layout .article-tour {
+    display: block;
+    overflow: hidden;
+    border-radius: 2px;
+    background: #FFF;
+    width: 100%;
+    margin-bottom: 20px;
+    border: none;
+    box-shadow: 0px 2px #E9EBEE;
+}
+#list-tour-layout .article-tour .thumbnail-media{
+    width: 30%;
+    float: left;
+    height: auto;
+}
+#list-tour-layout .article-tour .thumbnail-media a{
+    color: #337ab7;
+    text-decoration: none;
+}
+#list-tour-layout .article-tour .thumbnail-media img{
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+#list-tour-layout .article-tour .thumbnail-body{
+    display: block;
+}
+#list-tour-layout .article-tour .thumbnail-body .tour-title{
+    float: left;
+    height: 65px;
+    width: 68%;
+    margin-left: 2%;
+    border-bottom: 1px solid #EEE;
+}
+#list-tour-layout .article-tour .thumbnail-body .tour-title h2{
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0;
+    line-height: 0;
+}
+#list-tour-layout .article-tour .thumbnail-body > .tour-title > h2 > a{
+    font-size: 20px;
+    color: #02a0d4;
+    line-height: 1.733;
+    font-weight: bold;
+    text-decoration: none;
+}
+#list-tour-layout .article-tour .thumbnail-body > .tour-title > h2 > a:after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 50px;
+    background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #ffffff 65%, #ffffff 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(65%, #ffffff), color-stop(100%, #ffffff));
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #ffffff 65%, #ffffff 100%);
+    background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #ffffff 65%, #ffffff 100%);
+    background: -ms-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #ffffff 65%, #ffffff 100%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #ffffff 65%, #ffffff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#ffffff', GradientType=1);
+}
+#list-tour-layout .article-tour .thumbnail-body .meta-info{
+    float: left;
+    font-size: 13px;
+    color: #AAA;
+}
+#list-tour-layout .article-tour .thumbnail-body .meta-info a { text-decoration: none; }
+#list-tour-layout .article-tour .thumbnail-body .meta-info .tour-cat{}
+#list-tour-layout .article-tour .thumbnail-body .meta-info .tour-time{}
+#list-tour-layout .article-tour .thumbnail-body .meta-info .star{
+    display: inline;
+    color: #d46002;
+}
+
+#list-tour-layout .article-tour .thumbnail-body .tour-info{
+    float: left;
+    width: 67%;
+    margin-left: 2%;
+}
+#list-tour-layout .article-tour .tour-info .excrept-box{
+    border-right: 1px solid #EEE;
+    margin-left: 0;
+    float: left;
+    text-align: justify;
+    width: 70%;
+    padding-right: 20px;
+}
+#list-tour-layout .article-tour .tour-info .excrept-box p{
+    font-size: 13px;
+    color: #777;
+    padding-top: 10px;
+}
+#list-tour-layout .article-tour .tour-info .excrept-box .accompanied_service i{
+    background: #DADADA;
+    color: #FFF;
+    border-radius: 50%;
+    padding: 10px;
+    margin-right: 10px;
+    font-size: 13px;
+    -webkit-transition: all .25s;
+       -moz-transition: all .25s;
+        -ms-transition: all .25s;
+         -o-transition: all .25s;
+            transition: all .25s;
+}
+#list-tour-layout .article-tour .tour-info .excrept-box .accompanied_service i:hover {
+    background-color: #02A0D4;
+    color: #fff;
+    cursor: pointer;
+    -webkit-transition: all .25s;
+       -moz-transition: all .25s;
+        -ms-transition: all .25s;
+         -o-transition: all .25s;
+            transition: all .25s;
+}
+#list-tour-layout .article-tour .tour-info .excrept-box .accompanied_service span{
+    display: none;
+}
+
+#list-tour-layout .article-tour .tour-info .price-box {
+    width: 30%;
+    text-align: center;
+    float: left;
+}
+#list-tour-layout .article-tour .tour-info .price-box .price{
+    margin-top: 10px;
+    font-size: 22px;
+    margin-bottom: 0;
+    text-align: center;
+    color: #d46002;
+}
+#list-tour-layout .article-tour .tour-info .price-box a.btn-add-tour{
+    background: #62c626;
+    width: 107px;
+    color: white;
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+    border-radius: 3px;
+    border-bottom: 2px solid green;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 2. Grid layout */
+/* 2. Overplay layout */
