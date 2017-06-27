@@ -1,43 +1,25 @@
 
 <article <?php post_class( 'fl-post' ); ?> id="fl-post-<?php the_ID(); ?>" itemscope itemtype="http://schema.org/BlogPosting">
-
-	<?php if(has_post_thumbnail() && !empty($show_thumbs)) : ?>
-		<?php if($show_thumbs == 'above-title') : ?>
-		<div class="fl-post-thumb">
-			<?php the_post_thumbnail('large', array('itemprop' => 'image')); ?>
+	
+	<div class="tour-header">
+		<header class="fl-post-header">
+			<h1 class="fl-post-title" itemprop="headline">
+				<?php the_title(); ?>
+				<?php edit_post_link( _x( 'Edit', 'Edit post link text.', 'fl-automator' ) ); ?>
+			</h1>
+		</header><!-- .fl-post-header -->
+		<div class="tour-image-thumnail image-wrapper">
+			<?php if ( has_post_thumbnail() ) : ?>
+				<?php the_post_thumbnail( 'full' ); ?>
+			<?php endif; ?>
 		</div>
-		<?php endif; ?>
-	<?php endif; ?>
-
-	<header class="fl-post-header">
-		<h1 class="fl-post-title" itemprop="headline">
-			<?php the_title(); ?>
-			<?php edit_post_link( _x( 'Edit', 'Edit post link text.', 'fl-automator' ) ); ?>
-		</h1>
-		<?php FLTheme::post_top_meta(); ?>
-	</header><!-- .fl-post-header -->
-
-	<?php if(has_post_thumbnail()) : ?>
-		<div class="fl-post-thumb">
-			<?php the_post_thumbnail('large'); ?>
-		</div>
-
-		<?php if($show_thumbs == 'beside') : ?>
-		<div class="row">
-			<div class="col-md-3 col-sm-3">
-				<div class="fl-post-thumb">
-					<?php the_post_thumbnail('thumbnail'); ?>
-				</div>
-			</div>
-			<div class="col-md-9 col-sm-9">
-		<?php endif; ?>
-	<?php endif; ?>
-
-	<div class="fl-post-content clearfix" itemprop="text">
+	</div>
+	<!-- /.tour-header -->
+	<div class="tour-content fl-post-content clearfix" itemprop="text">
 		<?php
 
 		the_content();
-
+		
 		wp_link_pages( array(
 			'before'         => '<div class="fl-post-page-nav">' . _x( 'Pages:', 'Text before page links on paginated post.', 'fl-automator' ),
 			'after'          => '</div>',
@@ -46,13 +28,9 @@
 
 		?>
 	</div><!-- .fl-post-content -->
-
-	<?php if(has_post_thumbnail() && $show_thumbs == 'beside') : ?>
-		</div>
-	</div>
-	<?php endif; ?>
-
-	<?php FLTheme::post_bottom_meta(); ?>
+	<!-- /.tour-content -->
+	<div class="tour-footer"></div>
+	<!-- /.tour-footer -->
 	<?php FLTheme::post_navigation(); ?>
 	<?php comments_template(); ?>
 
