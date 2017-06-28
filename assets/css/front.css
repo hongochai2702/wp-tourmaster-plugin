@@ -227,3 +227,199 @@ a {
 
 /* 2. Grid layout */
 /* 2. Overplay layout */
+
+/* =======================================
+ - Single Template 
+========================================== */
+body { background: #f2f2f2; }
+#single-tour-layout {  }
+
+.single-body-tour {
+  background: #f0f3f6;
+  margin: 20px 0;
+}
+/* Single header tour */
+.single-header-tour {}
+.single-header-tour .tour-title{}
+.single-header-tour .tour-title h1{
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    color: #02a0d4;
+    position: relative;
+    border-bottom: 1px #ccc solid;
+    padding-bottom: 9px;
+}
+.single-header-tour .tour-title h1:after {
+    display: block;
+    content: "";
+    width: 80px;
+    height: 3px;
+    background: #02a0d4;
+    position: absolute;
+    bottom: 0;
+}
+.single-header-tour .thumbnail-media {
+    display: block;
+    overflow: hidden;
+    background-color: rgb(249, 249, 249);
+    border-radius: 5px;
+}
+.single-header-tour .thumbnail-media a{}
+.single-header-tour .thumbnail-media img{
+    width: 100%;
+    height: auto;
+}
+
+.single-body-tour .tab {
+    transition: all ease .3s;
+    font-family: 'Roboto', sans-serif;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  padding: 10px 15px;
+  float: left;
+  margin: 0px 5px;
+  cursor: pointer;
+}
+.single-body-tour .tab-content {
+    transition: all ease .3s;
+  background: #FFF;
+  margin: 0px 0px 20px 0px;
+  padding: 15px;
+  color: #333;
+  font-size: 13px;
+  font-family: 'Roboto', sans-serif;
+}
+.single-body-tour .tab-content p {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Roboto', sans-serif;
+}
+.single-body-tour .main p img {
+  margin: 10px 0px;
+}
+.single-body-tour .tab-content h3 {
+  color: #ff8400;
+  font-size: 16px;
+  margin-top: 20px;
+}
+.single-body-tour .tab-content h4 {
+  font-size: 16px;
+  color: #333;
+}
+.single-body-tour .tab-content .line {
+  width: 680px;
+  border-top: 1px solid #CCC;
+  margin: 10px 0px;
+}
+.single-body-tour .tab-content .icon {
+  font-size: 18px;
+  background: #02a0d4;
+  color: #FFF;
+  padding: 7px;
+  border-radius: 2px;
+}
+.single-body-tour .tab-content .content {
+  display: none;
+}
+.single-body-tour .tab-content .btn-green {
+  width: 329px;
+  background: #62c626;
+  margin: 20px 10px;
+  color: #fff;
+  padding: 10px 5px;
+  text-align: center;
+  border-radius: 3px;
+  border-bottom: 2px solid green;
+  cursor: pointer;
+}
+.single-body-tour .tab-content .btn-blue {
+  width: 329px;
+  background: #02a0d4;
+  margin: 20px 10px;
+  color: #fff;
+  padding: 10px 5px;
+  text-align: center;
+  border-radius: 3px;
+  border-bottom: 2px solid blue;
+  cursor: pointer;
+}
+
+/* TAB Tour */
+
+.tab-tour {
+    display: block;
+    overflow: hidden;
+    padding: 0;
+    border-bottom: 3px solid #02a0d4;
+}
+.tab-tour .tab {
+  background: white;
+  color: black;
+  font-weight: bold;
+}
+.tab-tour .tab:nth-child(1) {
+  margin-left: 0 !important;
+}
+.tab-tour .tab.select {
+  color: white;
+  background: #02a0d4;
+}
+.is-sticky > .tab-tour{
+    /* Trừ đi menu mt:  45px; */
+  margin-top: 90px;
+  z-index: 1;
+  background-color: #F0F3F6;
+  width: 768px;
+}
+
+/* #right-sidebar */
+#right-sidebar .pintab .tour-info {
+    background: #fff;
+    border-radius: 2px;
+    font-size: 13px;
+    z-index: 9999;
+}
+#right-sidebar .pintab .tour-info h2{
+    font-size: 18px;
+    color: white;
+    margin-bottom: 15px;
+    margin-top: 0;
+    padding: 15px;
+    background: #02a0d4;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+}
+#right-sidebar .pintab .tour-info .list-info{
+    padding: 0 15px 15px;
+}
+#right-sidebar .pintab .tour-info .list-info .item{
+    padding: 5px 0px 25px 0px;
+    border-bottom: 1px solid #DDD;
+    clear: both;
+}
+#right-sidebar .pintab .tour-info .list-info .item label{
+    float: left;
+    color: #444;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0px;
+    padding: 0px;
+}
+#right-sidebar .pintab .tour-info .list-info .item a{
+    float: right;
+    color: #02a0d4;
+    text-decoration: none;
+}
+#right-sidebar .pintab .tour-info .list-info .star{}
+label {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: bold;
+    line-height: 1;
+    color: #ffffff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}

@@ -47,6 +47,7 @@ add_action( 'wp_enqueue_scripts', 'tourmaster_enqueue_script' );
 if( !function_exists('tourmaster_enqueue_script') ){
 	function tourmaster_enqueue_script(){
 		wp_enqueue_style('tourmaster-style', TOURMASTER_ASSETS_URL . '/css/front.css');
+                wp_enqueue_script('tourmaster-sticky-script', TOURMASTER_ASSETS_URL . '/js/jquery/jquery.sticky.js', array('jquery'), false, true);
 		/*tourmaster_enqueue_icon();
 
 		wp_enqueue_script('jquery-ui-core');
