@@ -22,6 +22,7 @@ define('TOURMASTER_AJAX_URL', admin_url('admin-ajax.php'));
 define('TOURMASTER_INCLUDE_LOCAL', TOURMASTER_LOCAL . '/includes');
 define('TOURMASTER_EXT_LOCAL', TOURMASTER_LOCAL . '/extensions');
 define('TOURMASTER_ASSEST_LOCAL', TOURMASTER_LOCAL . '/assests');
+define('TOURMASTER_SINGLE_LOCAL', TOURMASTER_LOCAL . '/single');
 
 // add activation hook
 register_activation_hook(__FILE__, 'tourmaster_plugin_activation');
@@ -46,8 +47,11 @@ require_once ( TOURMASTER_EXT_LOCAL . '/menu-icons/menu-icons.php' );
 add_action( 'wp_enqueue_scripts', 'tourmaster_enqueue_script' );
 if( !function_exists('tourmaster_enqueue_script') ){
 	function tourmaster_enqueue_script(){
+		
 		wp_enqueue_style('tourmaster-style', TOURMASTER_ASSETS_URL . '/css/front.css');
-                wp_enqueue_script('tourmaster-sticky-script', TOURMASTER_ASSETS_URL . '/js/jquery/jquery.sticky.js', array('jquery'), false, true);
+        wp_enqueue_script('tourmaster-sticky-script', TOURMASTER_ASSETS_URL . '/js/jquery/jquery.sticky.js', array('jquery'), false, true);
+        wp_enqueue_script('tourmaster-script', TOURMASTER_ASSETS_URL . '/js/tourmaster.js', array('jquery'), false, true);
+        
 		/*tourmaster_enqueue_icon();
 
 		wp_enqueue_script('jquery-ui-core');
@@ -60,6 +64,7 @@ if( !function_exists('tourmaster_enqueue_script') ){
 
 		// for localization of the datepicker
 		// ref : https://gist.github.com/clubduece/4053820
+
 		global $wp_locale;
 		$aryArgs = array(
 			'closeText'         => esc_html__('Done', 'tourmaster'),
@@ -69,11 +74,13 @@ if( !function_exists('tourmaster_enqueue_script') ){
 			'dayNames'          => tourmaster_strip_array_indices($wp_locale->weekday),
 			'dayNamesShort'     => tourmaster_strip_array_indices($wp_locale->weekday_abbrev),
 			'dayNamesMin'       => tourmaster_strip_array_indices($wp_locale->weekday_initial),
-			'firstDay'          => get_option('start_of_week')
+			'firstDay'          => get_option('start_of_week'),
+			//'tm_admin_ajax'		=> array('url' => admin_url('admin-ajax.php'))
 		);
-		wp_localize_script( 'tourmaster-script', 'TMi18n', $aryArgs );
+		wp_localize_script( 'tourmaster-admin-script', 'TMi18n', $aryArgs );
 	}
 }
+
 if( !function_exists('tourmaster_strip_array_indices') ){
 	function tourmaster_strip_array_indices( $arrayToStrip ){
 		$newArray = array();

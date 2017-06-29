@@ -17,7 +17,7 @@
 			<?php if(have_posts()) : ?>
 			
 				<?php while(have_posts()) : the_post(); ?>
-					<?php include( TOURMASTER_LOCAL . '/single/content-archive-tour.php' ); ?>
+					<?php include( TOURMASTER_LOCAL . '/single/template/archive-list-tour.php' ); ?>
 				<?php endwhile; ?>
 				
 				<?php FLTheme::archive_nav(); ?>

@@ -4,7 +4,7 @@
             <div id="single-tour-layout">
                 <div class="single-header-tour">
                     <header class="tour-title">
-                        <h1>Tour Hàn Quốc: Seoul – Nami – Everland – Drumcat Show 5 ngày 4 đêm</h1>
+                        <h1><?php the_title(); ?></h1>
                     </header>
                     <div class="thumbnail-media">
                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
@@ -29,11 +29,18 @@
                                 <!-- /.c-tab1 -->
                                 <div class="content c-tab2">
                                     <?php $tmp_tour_atts = get_post_meta($post->ID, 'tour_detailed_schedule', false);
-                                        $tour_atts = $tmp_tour_atts[0];
-                                        foreach ($tour_atts as $k => $val) {
-                                            echo '<h3>'. $val['tour_detailed_schedule_title'] .'</h3>';
-                                            echo '<div class="tour_detailed_schedule-'.$k.'">'. $val['tour_detailed_schedule_content'] .'</div>';
+                                        if ( isset($tmp_tour_atts) && count( $tmp_tour_atts ) > 0 ) {
+                                            $tour_atts = $tmp_tour_atts[0];
+                                            foreach ($tour_atts as $k => $val) {
+                                                echo '<h3>'. $val['tour_detailed_schedule_title'] .'</h3>';
+                                                echo '<div class="tour_detailed_schedule-'.$k.'">'. $val['tour_detailed_schedule_content'] .'</div>';
+                                            }    
+                                        } else {
+                                            $tmp_tour_atts = get_post_meta($post->ID, 'tour_detailed_schedule_full_content', false);
+                                            $dataArr = tourmaster_strip_array_indices($tmp_tour_atts);
+                                            echo nl2br($dataArr[0]);
                                         }
+                                        
                                     ?>
                                     
                                     <p style="text-align: justify;"><strong>Chắc chắn bạn đang có hẹn với Hàn Quốc tháng 5, 6, ở đất nước đẹp như mơ trong những thước phim lãng mạn, với rất nhiều cảnh đẹp, điểm đến khám phá kỳ thú, nơi có nền văn hóa vô cùng đặc sắc và còn đáp ứng cơn cuồng mua sắm những sản phẩm hấp dẫn, ngay trong Tour Seoul – Nami – Everland – Drumcat Show 5 ngày 4 đêm, giá ưu đãi hấp dẫn mà PYS Travel dành cho bạn.</strong></p>

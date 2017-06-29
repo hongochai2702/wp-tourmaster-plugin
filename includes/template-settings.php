@@ -113,6 +113,20 @@
 		}
 	}
 
+	// apply page template.
+	add_filter( 'page_template', 'tourmaster_page_template_booking' );
+	if( !function_exists('tourmaster_page_template_booking') ) {
+		function tourmaster_page_template_booking( $page_template ) {
+			global $tourSettings;
+			$booking_page = $tourSettings['tm_tour_page_template'];
+			if ( $booking_page && is_page( $booking_page ) ) {
+				$page_template = TOURMASTER_SINGLE_LOCAL . '/page-template-booking-tour.php';
+			}
+			return $page_template;
+
+		}
+	}
+
 	// add class for each plugin's template 
 	add_filter('body_class', 'tourmaster_template_class');
 	if( !function_exists('tourmaster_template_class') ){

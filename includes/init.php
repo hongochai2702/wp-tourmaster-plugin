@@ -12,3 +12,4 @@ if( is_admin() ){
 }
 include_once ( TOURMASTER_INCLUDE_LOCAL . '/class-tourmaster-admin.php' );
 include_once ( TOURMASTER_INCLUDE_LOCAL . '/template-settings.php' );
+include_once ( TOURMASTER_INCLUDE_LOCAL . '/tour-ajax.php' );

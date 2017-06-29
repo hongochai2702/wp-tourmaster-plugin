@@ -61,7 +61,7 @@ global $tourSettings;
   } else if ( $tourSettings['tm_layout_detailed_schedule'][0] == 'editor' ) {
     piklist( 'field', array(
             'type' => 'editor'
-            ,'field' => 'tour_detailed_schedule_content'
+            ,'field' => 'tour_detailed_schedule_full_content'
             ,'label' => __('Content detailed schedule', 'piklist-tour')
             ,'columns' => 12
             ,'template' => 'field'

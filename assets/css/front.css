@@ -411,7 +411,7 @@ body { background: #f2f2f2; }
     text-decoration: none;
 }
 #right-sidebar .pintab .tour-info .list-info .star{}
-label {
+#right-sidebar .pintab .tour-info label {
     display: inline;
     padding: .2em .6em .3em;
     font-size: 75%;
@@ -423,3 +423,39 @@ label {
     vertical-align: baseline;
     border-radius: .25em;
 }
+
+/* =======================================
+ - Booking Tour Template 
+========================================== */
+#booking-tour-form {
+  background: #fff;
+  padding: 15px;
+  -webkit-box-shadow: 0 1px 2px #4c81b0;
+  -moz-box-shadow: 0 2px 1px #4c81b0;
+  box-shadow: 0 2px 1px #4c81b0;
+  border-radius: 10px;
+}
+/* Tour info style */
+.form-book-tour .tour-info{}
+
+/* Tour contact customer */
+.form-book-tour .tour-contact-customer{}
+.form-book-tour .tour-contact-customer label{
+  display: block;
+}
+.form-book-tour .tour-contact-customer input,
+.form-book-tour .tour-contact-customer textarea{
+  width: 100%;
+  max-width: 100%;
+}
+
+.form-book-tour .tour-contact-customer .button-submit {
+  display: block;
+  width: 100%;
+}
+.form-book-tour .tour-contact-customer .button-submit .btn-sm{
+  display: inline;
+  padding: 0 !important;
+  font-size: inherit;
+}
+
