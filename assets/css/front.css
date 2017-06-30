@@ -443,12 +443,11 @@ body { background: #f2f2f2; }
 .form-book-tour .tour-contact-customer label{
   display: block;
 }
-.form-book-tour .tour-contact-customer input,
+.form-book-tour .tour-contact-customer input[type="text"],
 .form-book-tour .tour-contact-customer textarea{
   width: 100%;
   max-width: 100%;
 }
-
 .form-book-tour .tour-contact-customer .button-submit {
   display: block;
   width: 100%;

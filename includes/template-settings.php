@@ -120,6 +120,7 @@
 			global $tourSettings;
 			$booking_page = $tourSettings['tm_tour_page_template'];
 			if ( $booking_page && is_page( $booking_page ) ) {
+				global $tourSettings;
 				$page_template = TOURMASTER_SINGLE_LOCAL . '/page-template-booking-tour.php';
 			}
 			return $page_template;

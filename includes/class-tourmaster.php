@@ -20,6 +20,27 @@ if( !defined( 'ABSPATH' ) ) exit; // Exit if acccessed directly.
 		add_action('piklist_workflow_flow_append', array( $this, 'piklist_tour_workflow_bar') );
 	}
 
+	/**
+     * Get the posted data for a form
+     *
+     * @param  integer $post_id the form post ID
+     *
+     * @return array            the form values
+     */
+    public function get_mail_posted_fields($post_id = 0)
+    {
+        $posted = array();
+        $post_meta = get_post_meta($post_id);
+        $posted = array_intersect_key(
+            $post_meta,
+            array_flip(array_filter(array_keys($post_meta), function ($key) {
+                return preg_match('/^tour_/', $key);
+            }))
+        );
+
+        return $posted;
+    }
+
 	public function piklist_tour_field_templates($templates) {
 		$templates['piklist_tour'] = array(
 			'name' => __('User', 'piklist-tour')
