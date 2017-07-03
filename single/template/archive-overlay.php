@@ -25,17 +25,17 @@ switch ( $tourSettings['tm_tour_columns_archive'] ) {
 	<div class="post-thumbnail-wrap">
 		<div class="post-thumbnail">
 			<a href="<?php the_permalink(); ?>" class="post-thumbnail-rollover">
-				<img class="iso-lazy-load preload-me height-ready iso-layzr-loaded" src="http://the7io.dreamthemecom.netdna-cdn.com/main/wp-content/uploads/sites/39/2014/03/7-4-004-728x728.jpg" alt="" width="728" height="728" data-ratio="1" srcset="http://the7io.dreamthemecom.netdna-cdn.com/main/wp-content/uploads/sites/39/2014/03/7-4-004-728x728.jpg 728w, http://the7io.dreamthemecom.netdna-cdn.com/main/wp-content/uploads/sites/39/2014/03/7-4-004-1000x1000.jpg 1000w" sizes="379px">
+				<?php the_post_thumbnail('full', 'lazyLoad' ); ?>
 			</a>
 		</div>
 	</div>
 	<!-- /.post-thumbnail-wrap -->
 
 	<div class="post-entry-content">
-		<div class="post-entry-wrapper" style="transform: translateY(85px);">
-			<h3 class="entry-title"> <a href="http://the7.io/main/5-reasons-lorem-ipsum-dolor/" title="5 Reasons lorem ipsum dolor" rel="bookmark">5 Reasons lorem ipsum dolor</a> </h3>
+		<div class="post-entry-wrapper" style="transform: translateY(100px);">
+			<h3 class="entry-title"> <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a> </h3>
 			<div class="entry-meta"><span class="category-link"><a href="#">Travel</a></span></div>
-			<div class="entry-excrept"><p>Duis ornare, est at lobortis mollis, felis libero mollis orci, vitae congue neque…</p></div>
+			<div class="entry-excrept"><p style="color: #fff">Duis ornare, est at lobortis mollis, felis libero mollis orci, vitae congue neque…</p></div>
 			<a href="http://the7.io/main/5-reasons-lorem-ipsum-dolor/" class="post-details details-type-link" rel="nofollow">Read more<i class="fa fa-caret-right" aria-hidden="true"></i></a>
 		</div>
 
