@@ -1,0 +1,148 @@
+jQuery(document).ready(function ($) {
+    $("#menu-item-7693").remove();
+    $('#right-sidebar').height($('.main-section.container').height() - 100);
+    $(".pinned").pin({
+        containerSelector: "#right-sidebar"
+    });
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 200) {
+            $(".scrolltop").fadeIn('slow');
+        }
+        else {
+            $(".scrolltop").fadeOut('slow');
+        }
+    });
+    $(".scrolltop").click(function () {
+        $("html, body").animate({scrollTop: 0}, 'slow');
+    });
+    $("#menu-item-159 > a").hover(function (event) {
+        // $("#topTours").show().mouseleave(function(event) {
+        // 	$(this).css('display', 'none').css({
+        // 		property1: 'value1',
+        // 		property2: 'value2'
+        // 	});;
+        // });
+        // $(this).parent().toggleClass('active');
+        $("#searcharea").css('display', 'none');
+        $("#topTours").css('display', 'block');
+        $("#topTours").mouseleave(function (event) {
+            $(this).css('display', 'none');
+        });
+    });
+    $(".menu-item:not(#menu-item-159) a").mouseenter(function (event) {
+        $("#topTours").css('display', 'none');
+    })
+
+    $("#searchbtn").tooltip({
+        placement: 'left',
+        title: 'Tìm tour',
+        trigger: 'manual'
+    }).tooltip('show');
+    $("#searchbtn").click(function () {
+        $("#searcharea").fadeToggle();
+        $("topTours").css('display', 'none');
+    });
+
+    $("#gioithieu-tour .tab").click(function () {
+        var tab = $(this).attr("data-tab");
+        $(this).addClass("select");
+        $(this).siblings().removeClass("select");
+        $(".content").hide();
+        $(".c-" + tab).show();
+    });
+
+    //fix display error
+    $("p:has(img.aligncenter)").find("img").css({"display": "block", "margin": "0 auto"});
+    $("p").each(function (index) {
+        if ($(this).html() == "") $(this).height(20);
+    });
+
+    //$("#right-sidebar").stick_in_parent();
+
+    //numberToStar("#tours > div > div > div.col-xs-8 > div > div > div.right > div");
+    //numberToStar("#chititet-tour > div > div > div.col-xs-3.thongtin > div:nth-child(5) > a > div");
+    
+    $("#searcharea .close").click(function () {
+        $("#searcharea").fadeOut();
+    });
+
+    $(window).resize(function () {
+        $("#menu-primary").css('width', $(window).width() + 'px');
+    });
+});
+
+function formatNumber(nStr) {
+    nStr += '';
+    x = nStr.split(',');
+    x1 = x[0];
+    x2 = x.length > 1 ? ',' + x[1] : '';
+    var rgx = /(\d+)(\d{3})/;
+    while (rgx.test(x1)) {
+        x1 = x1.replace(rgx, '$1' + '.' + '$2');
+    }
+    return x1 + x2;
+}
+
+var wpajaxurl = '/wp-admin/admin-ajax.php';
+
+var app = angular.module('PYSTravel', []);
+
+app.run(function ($rootScope, $http) {
+    $rootScope.convertToNonVietnamese = function (str) {
+        str = str.toLowerCase();
+        str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
+        str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e");
+        str = str.replace(/ì|í|ị|ỉ|ĩ/g, "i");
+        str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, "o");
+        str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u");
+        str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y");
+        str = str.replace(/đ/g, "d");
+        return str;
+    }
+});
+
+app.controller('advancedSearch', function ($scope, $rootScope, $http) {
+    $scope.searchBarFocus = false;
+    $scope.search = '';
+    $scope.places = [];
+    $scope.tours = [];
+
+    $http({
+        method: 'GET',
+        url: wpajaxurl,
+        params: {
+            action: 'ntvinh_get_places'
+        }
+    }).then(function (res) {
+        $scope.places = res.data;
+    });
+
+    $http({
+        method: 'GET',
+        url: wpajaxurl,
+        params: {
+            action: 'ntvinh_get_tours'
+        }
+    }).then(function (res) {
+        $scope.tours = res.data;
+    });
+
+    $scope.searchPlaces = function (item) {
+        var $search = $rootScope.convertToNonVietnamese($scope.search),
+            $name = $rootScope.convertToNonVietnamese(item.name),
+            $slug = $rootScope.convertToNonVietnamese(item.slug);
+        if (!$search
+            || $name.indexOf($search) != -1
+            || $slug.indexOf($search) != -1
+        ) return true;
+        return false;
+    };
+
+    $scope.searchTours = function (item) {
+        var $search = $rootScope.convertToNonVietnamese($scope.search),
+            $title = $rootScope.convertToNonVietnamese(item.post_title);
+        if (!$search || $title.indexOf($search) != -1)
+            return true;
+        return false;
+    }
+});

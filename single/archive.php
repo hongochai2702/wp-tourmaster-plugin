@@ -1,11 +1,13 @@
-<?php get_header(); ?>
+<?php get_header(); global $tourSettings; 
+
+?>
 
 <div class="fl-archive container">
 	<div class="row">
 		
-		<?php FLTheme::sidebar('left'); ?>
+		<?php //FLTheme::sidebar('left'); ?>
 		
-		<div class="fl-content <?php FLTheme::content_class(); ?>" itemscope="itemscope" itemtype="http://schema.org/Blog" id="list-tour-layout">
+		<div class="fl-content col-md-12" itemscope="itemscope" itemtype="http://schema.org/Blog">
 
 			<header class="fl-archive-header">
 				<?php
@@ -13,11 +15,11 @@
 				?>
 				<h1 class="fl-archive-title"><?php echo $term->name; ?></h1>
 			</header>
-			
+			<?php do_action( 'archive_before_post_tour' ); ?>
 			<?php if(have_posts()) : ?>
 			
 				<?php while(have_posts()) : the_post(); ?>
-					<?php include( TOURMASTER_LOCAL . '/single/template/archive-list-tour.php' ); ?>
+					<?php load_template( TOURMASTER_SINGLE_LOCAL . '/template/archive-'. $tourSettings['tm_tour_layout_archive'][0] .'.php' , false ); ?>
 				<?php endwhile; ?>
 				
 				<?php FLTheme::archive_nav(); ?>
@@ -27,10 +29,10 @@
 				<?php get_template_part('content', 'no-results'); ?>
 		
 			<?php endif; ?>
-			
+			<?php do_action( 'archive_after_post_tour' ); ?>
 		</div>
 		
-		<?php FLTheme::sidebar('right'); ?>
+		<?php //FLTheme::sidebar('right'); ?>
 		
 	</div>
 </div>

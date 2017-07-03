@@ -1,0 +1,176 @@
+span.orange {
+  color: orange;
+}
+.sweet-alert {
+  width: 900px;
+  margin-left: -450px;
+}
+#menu-primary {
+  overflow: hidden;
+}
+#dat-tour br {
+  display: none;
+}
+#dat-tour .div1 p {
+  margin: 10px 0 5px;
+}
+#dat-tour .div1 p > span {
+  color: #ffa200;
+  font-weight: bold;
+}
+#dat-tour .div1 input,
+#dat-tour .div1 textarea {
+  font-family: Open Sans;
+  border-radius: 2px;
+  font-size: 14px;
+  padding: 5px 20px;
+  border: 1px solid #DDD;
+  margin: 5px 10px 5px 0px;
+}
+#dat-tour .div1 input[readonly],
+#dat-tour .div1 textarea[readonly] {
+  background: white;
+  cursor: pointer;
+}
+#dat-tour .div1 .smallFormControl {
+  display: flex;
+}
+#dat-tour .div1 .smallFormControl > * {
+  flex: auto;
+}
+#dat-tour .div1 .smallFormControl input {
+  width: 100px;
+}
+#dat-tour .div1 .smallFormControl label {
+  line-height: 40px;
+}
+#dat-tour .div2 input,
+#dat-tour .div2 textarea {
+  border-radius: 2px;
+  width: 430px;
+  border: 1px solid #DDD;
+  padding: 5px 20px;
+  margin-bottom: 10px;
+}
+#dat-tour .div2 input[type="radio"] {
+  width: 20px;
+}
+#dat-tour .div2 input[type="submit"] {
+  width: 160px;
+  padding: 0;
+}
+#dat-tour .div2 .btn-next {
+  border: 0;
+  margin-right: -20px;
+}
+
+.pace {
+  z-index: 999999999999;
+  position: fixed;
+}
+
+.goiDienTuVan_phoneBlock {
+  position: relative;
+  background: yellow;
+  padding-top: 20px;
+  text-align: center;
+  border-radius: 3px;
+  margin: 20px 0 10px;
+}
+.goiDienTuVan_phoneBlock .iconPhone {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #02a0d4;
+  width: 40px;
+  height: 40px;
+  border: 2px solid orange;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 36px;
+}
+.goiDienTuVan_phoneBlock p {
+  margin: 0;
+  color: #02a0d4 !important;
+  font-weight: 600;
+}
+.goiDienTuVan_phoneBlock .bigger {
+  margin: 0 -20px;
+}
+.goiDienTuVan_phoneBlock .bigger p {
+  font-size: 18px !important;
+}
+.goiDienTuVan_phoneBlock .smaller p:before {
+  content: "(";
+}
+.goiDienTuVan_phoneBlock .smaller p:after {
+  content: ")";
+}
+
+.right-col.orange button{
+  text-align: center;
+  margin: -10px auto;
+  display: block;
+}
+.right-col.orange .header,.right-col.orange p {
+  text-align: center;
+}
+
+.Footer2Column p {
+  font-size: 13px;
+  margin: 0;
+}
+.Footer2Column strong {
+  font-size: 15px;
+}
+
+#chitiettin .title {
+  margin-top: 40px;
+  position: relative;
+  text-align: center;
+}
+
+#chitiettin .title:before {
+  width: 100%;
+  height: 1px;
+  background: #b4b4b4;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  content: "";
+}
+
+#chitiettin .title:after {
+  width: 100%;
+  height: 1px;
+  background: #b4b4b4;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  content: "";
+}
+#chitiettin .title h3 {
+  color: #ff8400;
+  font: 400 22px / 20px "Open Sans";
+  margin: 30px auto;
+  display: block;
+  z-index: 9;
+  position: relative;
+  background: white;
+  max-width: 400px;
+  font-weight: 600;
+}
+
+#chitiettin .title .viewall {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  background: white;
+  display: block;
+  width: 75px;
+  height: 20px;
+  border: 1px solid #aaa;
+  transform: translateY(-50%);
+  z-index: 999;
+}

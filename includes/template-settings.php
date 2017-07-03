@@ -141,3 +141,14 @@
 
 		}
 	}
+
+	add_action('archive_before_post_tour', 'archive_before_post_tour_div' , 10);
+	if( !function_exists('archive_before_post_tour_div') ){
+		function archive_before_post_tour_div(){ echo '<div class="row">'; }
+	}
+
+	add_action('archive_after_post_tour', 'archive_after_post_tour_div', 10);
+	if( !function_exists('archive_after_post_tour_div') ){
+		function archive_after_post_tour_div(){ echo '</div>'; echo '<!-- end row -->'; }
+	}
+

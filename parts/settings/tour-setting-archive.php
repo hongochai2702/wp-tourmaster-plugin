@@ -16,7 +16,7 @@ Flow: Tour Workflow
     $pages = get_pages();
     $pages_data = array();
     foreach ($pages as $page) {
-        $pages_data[$page->post_name] = $page->post_title;
+        $pages_data[$page->ID] = $page->post_title;
     }
     return $pages_data;
   }

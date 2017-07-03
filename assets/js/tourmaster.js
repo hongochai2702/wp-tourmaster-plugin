@@ -1,4 +1,10 @@
 jQuery(document).ready(function($) {
+	/* Overlay layout Archive */
+	$(".overlay-layout .post-entry-wrapper").hover(function() {
+		$(this).css('transform', 'translateY(0px)');
+	}, function() {
+		$(this).css('transform', 'translateY(85px)');
+	});
 	/* <![CDATA[ */
 	var sb_admin_ajax = {"url":"http:\/\/chili.dev\/travelTourist\/wp-admin\/admin-ajax.php"};
 	/* ]]> */
@@ -58,7 +64,7 @@ jQuery(document).ready(function($) {
 		var price_children 		= $("input[name=\'price_children\'").val();
 		var number_children		= $("input[name=\'number_children\'").val();
 		var number_adults		= $(this).val();
-		var price_total 		= parseInt(price_adults * number_adults) + parseInt(price_children * number_children);
+		var price_total 		= parseFloat(price_adults * number_adults) + parseFloat(price_children * number_children);
 		$("input[name=price_total").val(price_total);
 		console.log(number_children);
 		$('.price_total').html(price_total);
