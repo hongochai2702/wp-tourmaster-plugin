@@ -1,6 +1,6 @@
 <?php
 /*
-Title: Layouts
+Title: Archive Tour
 Order: 10
 Flow: Tour Workflow
 Tab: Layout

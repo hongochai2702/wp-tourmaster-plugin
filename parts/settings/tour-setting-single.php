@@ -2,8 +2,8 @@
 /*
 Title: Cấu hình trang chi tiết tour
 Order: 20
-Tab: General
-Sub Tab: General
+Tab: Layout
+Sub Tab: Single Tour
 Setting: tour_settings
 Flow: Tour Workflow
 */
