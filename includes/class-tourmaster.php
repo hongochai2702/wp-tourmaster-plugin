@@ -31,12 +31,14 @@ if( !defined( 'ABSPATH' ) ) exit; // Exit if acccessed directly.
     {
         $posted = array();
         $post_meta = get_post_meta($post_id);
-        $posted = array_intersect_key(
-            $post_meta,
-            array_flip(array_filter(array_keys($post_meta), function ($key) {
-                return preg_match('/^tour_/', $key);
-            }))
-        );
+		if( isset($posted) && count($posted)) {
+			$posted = array_intersect_key(
+				$post_meta,
+				array_flip(array_filter(array_keys($post_meta), function ($key) {
+					return preg_match('/^tour_/', $key);
+				}))
+			);
+		} else { return; }
 
         return $posted;
     }
